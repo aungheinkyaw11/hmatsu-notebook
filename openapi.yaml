@@ -1,23 +1,45 @@
+---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: artist-api
-  description: Retrieve artist details
+  name: hmatsu-notebook-api
+  description: API used by the HMATSU Notebook application
 spec:
   type: openapi
   lifecycle: production
-  owner: artist-relations-team
-  system: artist-engagement-portal
+  owner: hmatsu-admin
   definition: |
     openapi: "3.0.0"
+
     info:
+      title: HMATSU Notebook API
       version: 1.0.0
-      title: Artist API
-      license:
-        name: MIT
+      description: API for managing HMATSU notebook data
+
     servers:
-      - url: http://artist.spotify.net/v1
+      - url: https://YOUR-DEPLOYED-DOMAIN.com
+
     paths:
-      /artists:
+      /api/notes:
         get:
-          summary: List all artists
+          summary: Retrieve notes
+          responses:
+            "200":
+              description: Notes retrieved successfully
+
+        post:
+          summary: Create a note
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    content:
+                      type: string
+          responses:
+            "201":
+              description: Note created successfully
