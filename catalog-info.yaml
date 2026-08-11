@@ -2,9 +2,12 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: hmatsu-notebook
+  description: HMATSU Notebook application
   annotations:
     github.com/project-slug: aungheinkyaw11/hmatsu-notebook
 spec:
-  type: other
-  lifecycle: unknown
-  owner: guests
+  type: website
+  lifecycle: production
+  owner: hmatsu-admin
+  providesApis:
+    - hmatsu-notebook-api
