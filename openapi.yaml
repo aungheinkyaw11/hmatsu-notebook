@@ -9,37 +9,4 @@ spec:
   lifecycle: production
   owner: hmatsu-admin
   definition: |
-    openapi: "3.0.0"
-
-    info:
-      title: HMATSU Notebook API
-      version: 1.0.0
-      description: API for managing HMATSU notebook data
-
-    servers:
-      - url: https://YOUR-DEPLOYED-DOMAIN.com
-
-    paths:
-      /api/notes:
-        get:
-          summary: Retrieve notes
-          responses:
-            "200":
-              description: Notes retrieved successfully
-
-        post:
-          summary: Create a note
-          requestBody:
-            required: true
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    title:
-                      type: string
-                    content:
-                      type: string
-          responses:
-            "201":
-              description: Note created successfully
+    $file: 'https://gist.githubusercontent.com/lenage/08964335de9064540c8c335fb849c5da/raw/6d63e3546897356882ed7e30cd48891a24e2b354/feature.swagger.json'
