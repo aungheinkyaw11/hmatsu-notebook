@@ -2,13 +2,12 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: hmatsu-admin
-  description: The infra business unit
+  description: The HMATSU administrators
 spec:
-  type: business-unit
+  type: team
   profile:
-    displayName: Infrastructure
+    displayName: HMATSU Admin
     email: infrastructure@example.com
-    picture: https://example.com/groups/bu-infrastructure.jpeg
-  parent: ops
-  children: [backstage, other]
-  members: [aungheinkyaw11]
+  children: []
+  members:
+    - aungheinkyaw11
